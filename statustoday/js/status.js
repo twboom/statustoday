@@ -30,7 +30,7 @@ status('https://somtoday.nl',function(found){
 
   // When the function returns that images is found
   if(found) {
-    document.querySelector('#outputText').innerHTML = 'found';
+    document.querySelector('#outputText').innerHTML = 'online';
     console.log('found');
   }
 
