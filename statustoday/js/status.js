@@ -7,7 +7,7 @@ function status(url,callback) {
   },5000)
 
   // Creating the image that will come from server
-  let img = document.createElement("img");
+  let img = document.createElement('img');
 
   // Detect when the images loads (this means success)
   img.onload = function() {
@@ -21,22 +21,23 @@ function status(url,callback) {
     callback(false);
   }
 
-  img.src = url+"/favicon-32x32.png"
+  img.src = url+'/favicon-32x32.png'
 }
 
 // Implementing the function on the website
 function fetch() {
-status("https://somtoday.nl",function(found){
+status('https://somtoday.nl',function(found){
+
   // When the function returns that images is found
   if(found) {
-    // TODO: implement if found code
     document.querySelector('#outputText').innerHTML = 'found';
-    console.log("found");
+    console.log('found');
   }
+
   // When the function returns that images isn't found
   else {
     // TODO: Implement some kind of error
-    console.log("error")
+    console.log('error')
   }
 })
 };
