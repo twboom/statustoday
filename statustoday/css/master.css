@@ -2,12 +2,16 @@
 
 html {
   font-family: 'Open Sans';
-  background-color: gray;
+  color: white;
+  background-color: #4D4C4C;
+}
+
+body {
 }
 
 header {
   text-align: center;
-  background-color: lightGray;
+  background-color: #363636;
   border: hidden;
   border-radius: 10px;
   padding: 5px;
@@ -15,4 +19,34 @@ header {
 
 .headerText {
   margin: 2px;
+}
+
+h1.headerText {
+  font-size: 64px;
+}
+
+p.headerText {
+  font-size: 24px;
+}
+
+a {
+  color: white;
+}
+
+p#surroundingOutputText {
+  font-size: 48px;
+}
+
+.pageContent {
+  display: flex;
+  justify-content: center;
+}
+
+.tool {
+  margin: 10px;
+  padding-left: 20vw;
+  padding-right: 20vw;
+  background-color: #363636;
+  border: hidden;
+  border-radius: 10px;
 }
