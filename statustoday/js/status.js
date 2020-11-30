@@ -25,10 +25,12 @@ function status(url,callback) {
 }
 
 // Implementing the function on the website
+function fetch() {
 status("https://somtoday.nl",function(found){
   // When the function returns that images is found
   if(found) {
     // TODO: implement if found code
+    document.querySelector('#outputText').innerHTML = 'found';
     console.log("found");
   }
   // When the function returns that images isn't found
@@ -37,3 +39,6 @@ status("https://somtoday.nl",function(found){
     console.log("error")
   }
 })
+};
+
+window.onload = fetch;
