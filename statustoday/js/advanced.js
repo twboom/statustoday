@@ -4,7 +4,7 @@ status(url,file,function(found){
 
   // When the function returns that images is found
   if(found) {
-    document.querySelector('#outputText').innerHTML = 'online';
+    document.querySelector('#sixteen').innerHTML = 'found';
     console.log('found');
   }
 
