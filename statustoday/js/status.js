@@ -25,7 +25,7 @@ function status(url,file,callback) {
 }
 
 // Implementing the function on the website
-function fetch() {
+function fetch(url,file) {
 status(url,file,function(found){
 
   // When the function returns that images is found
@@ -42,4 +42,4 @@ status(url,file,function(found){
 })
 };
 
-window.onload = fetch;
+//window.onload = fetch;
