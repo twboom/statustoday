@@ -1,10 +1,10 @@
 // Implementing the function on the website
-function fetch(url,file) {
+function fetch(url,file,output) {
 status(url,file,function(found){
 
   // When the function returns that images is found
   if(found) {
-    document.querySelector('#sixteen').innerHTML = 'found';
+    document.querySelector('#'+output).innerHTML = 'found';
     console.log('found');
   }
 
