@@ -38,10 +38,18 @@ status.display = function() {
           }, {});
 
         console.log(`${map.true} of ${total} loaded`)
-        const loaded = 100 - map.true / total * 100
+        const loaded = 100 - map.true / total * 100;
+
+        document.getElementById('status-display').innerText = ''
+
+        if (map.true < session.length) {
+            document.getElementById('status-display').innerText += 'probably '
+        }
         
-        document.getElementById('status-display').innerText = 'online';
+        document.getElementById('status-display').innerText += 'online';
         document.getElementById('error-rate-display').innerText = `${loaded}%`
+    } else {
+        document.getElementById('status-display').innerText += 'probably offline';
     }
 }
 
