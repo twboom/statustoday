@@ -1,6 +1,6 @@
 const config = {
     "url": "https://somtoday.nl",
-    "files": ["favicon-16x16.png", "favicon-32x32.png"],
+    "files": ["favicon-16x16.png", "favicon-32x32.png", "favicon-96x96.png", "favicon-160x160.png", "favicon-192x192.png"],
     "timeout": 5000
 }
 
@@ -31,7 +31,17 @@ status.get = async function(file, timeout, callback) {
 
 status.display = function() {
     if (session.includes(true)) {
+        const total = session.length;
+        const map = session.reduce(function(obj, b) {
+            obj[b] = ++obj[b] || 1;
+            return obj;
+          }, {});
 
+        console.log(`${map.true} of ${total} loaded`)
+        const loaded = 100 - map.true / total * 100
+        
+        document.getElementById('status-display').innerText = 'online';
+        document.getElementById('error-rate-display').innerText = `${loaded}%`
     }
 }
 
