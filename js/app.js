@@ -2,7 +2,7 @@ const config = {
     "url": "https://somtoday.nl",
     "files": ["favicon-16x16.png", "favicon-32x32.png", "favicon-96x96.png", "favicon-160x160.png", "favicon-192x192.png"],
     "timeout": 5000,
-    "interval": 600000
+    "interval": 60000
 };
 
 let session = [];
@@ -77,8 +77,12 @@ status.check = async function() {
     })
 };
 
-window.onload = async function() {
-    status.check();
+status.background = async function(state) {
+    if (!state) { 
+        clearInterval(status.interval);
+        clearInterval(status.displayUpdate);
+        return
+    }
 
     status.interval = setInterval(_ => {
         status.check();
@@ -87,4 +91,9 @@ window.onload = async function() {
     status.displayUpdate = setInterval(_ => {
         document.getElementById('since-last-check').innerText = `${(Date.now() - status.lastCheck) / 1000}`
     }, 10)
+}
+
+window.onload = async function() {
+    status.check();
+    status.background(true);
 }

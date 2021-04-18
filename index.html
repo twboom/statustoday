@@ -23,6 +23,15 @@
             <p>Time since last check: <b><span id="since-last-check"><i>time-since-last-check</i></span></b>.</p>
         </section>
         <section>
+            <h1>Config</h1>
+            <p>I've been too lazy to implement config... it'll come to you soon(TM).</p>
+            <p>For now, you can open up the JavaScript console in your browser and eddit the config object.</p>
+            <p>
+                The most interesting config property is interval (config.interval, default is 60000). That represents the interval between background checks in milliseconds.
+                Be sure to start and stop the background with the functions `status.background(false)` and `status.background(true)`.
+            </p>
+        </section>
+        <section>
             <h1>About</h1>
             <p>StatusToday is a SomToday status checker, because <a href="https://som.today/status">the official one</a> sucks!</p>
             <p>Please note: I don't have the official server status, so this might be slightly inaccurate.</p>
